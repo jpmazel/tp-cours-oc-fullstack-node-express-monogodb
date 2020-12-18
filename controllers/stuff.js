@@ -4,12 +4,22 @@ const Thing = require("../models/Thing");
 //importation node pour accéder aux systèmes de fichier du pc
 const fs = require('fs');
 
-console.log(Thing);
+
 
 //logique métier qu'il y avait dans les routes 
 //on exporte une fonction createThing pour la création d'un objet
 exports.createThing = (req, res, next) => {
-  console.log("CONTENU de req.body.thing");
+
+  console.log("donnée dans Thing");
+  console.log(Thing);
+
+  // console.log("contenu de req");
+  // console.log(req);
+
+  console.log("contenu de req.body");
+  console.log(req.body);
+
+ console.log("CONTENU de req.body.thing");  
   console.log(req.body.thing);
 
   const thingObject = JSON.parse(req.body.thing);

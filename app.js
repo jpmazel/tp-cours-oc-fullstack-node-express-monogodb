@@ -40,12 +40,22 @@ app.use((req, res, next) => {
 //transformer le corps (le body) javascript en objet utilisable
 app.use(bodyParser.json());
 
+
+
 // app.use("/images", express.static(path.join(__dirname, 'images')));
 app.use('/images', express.static(path.join(__dirname, 'images')));
 
 //utilisation des routes et on met le début de la route et on utilise le router stuffRoutes
 app.use("/api/stuff", stuffRoutes);
+
+// app.use(function (err, req, res, next) {
+//   console.log('This is the invalid field ->', err.field)
+//   next()
+// })
+
 app.use("/api/auth", userRoutes);
+
+
 
 
 //Exporter l'application
